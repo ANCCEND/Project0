@@ -8,7 +8,7 @@ class Config:
     SECRET_KEY = os.getenv("FLASK_SECRET")
 
     # 数据库配置
-    SQLALCHEMY_DATABASE_URI = os.getenv("SQLALCHEMY_DATABASE_URL") 
+    SQLALCHEMY_DATABASE_URI = os.getenv(f"mysql+pymysql://{os.getenv("MYSQL_USER")}:{os.getenv("MYSQL_PASSWORD")}@{os.getenv("MYSQL_HOST")}/{os.getenv("MYSQL_DB")}") 
     SQLALCHEMY_TRACK_MODIFICATIONS = os.getenv("SQLALCHEMY_TRACK_MODIFICATIONS")
 
     # JWT 配置
